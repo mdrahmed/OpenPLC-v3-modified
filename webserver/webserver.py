@@ -1430,6 +1430,7 @@ def monitoring():
             modbus_port_cfg = 502
             database = "openplc.db"
             conn = create_connection(database)
+            print("Checking Modbus Server status")
             if (conn != None):
                 try:
                     print("Openning database")
@@ -2382,9 +2383,15 @@ if __name__ == '__main__':
             cur.execute("SELECT * FROM Programs WHERE File=?", (st_file,))
             #cur.execute("SELECT * FROM Programs")
             row = cur.fetchone()
-            openplc_runtime.project_name = str(row[1])
-            openplc_runtime.project_description = str(row[2])
-            openplc_runtime.project_file = str(row[3])
+            print(row)
+            if row is not None and len(row) > 3:
+                openplc_runtime.project_name = str(row[1])
+                openplc_runtime.project_description = str(row[2])
+                openplc_runtime.project_file = str(row[3])
+            else:
+                openplc_runtime.project_name = "project name not given"
+                openplc_runtime.project_description = "project desctiption not given"
+                #openplc_runtime.project_file = 
             
             cur.execute("SELECT * FROM Settings")
             rows = cur.fetchall()

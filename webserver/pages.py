@@ -817,8 +817,10 @@ monitoring_tail = """
         
         function loadData()
         {
+            console.log("Starting of loadData");
             html_modbus_port = document.getElementById('modbus_port_cfg');
             url = 'monitor-update?mb_port=' + html_modbus_port.value;
+            console.log("In loadData");
             try
             {
                 req = new XMLHttpRequest();

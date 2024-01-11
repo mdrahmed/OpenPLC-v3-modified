@@ -24,14 +24,6 @@ void PLC1_body__(PLC1 *data__) {
     NULL,
     (INT)__GET_LOCATED(data__->RANGESENSOR,)) / 100.0));
   __SET_VAR(data__->,DESIREDDISTANCEFILL,,7.0);
-  if ((INT_TO_REAL(
-    (BOOL)__BOOL_LITERAL(TRUE),
-    NULL,
-    (INT)__GET_LOCATED(data__->RANGESENSOR,)) > 99.0)) {
-    __SET_LOCATED(data__->,TREATMENTCOMPLETE,,__BOOL_LITERAL(TRUE));
-  } else {
-    __SET_LOCATED(data__->,TREATMENTCOMPLETE,,__BOOL_LITERAL(FALSE));
-  };
   if (__GET_LOCATED(data__->TREATMENTCOMPLETE,)) {
     if ((__GET_VAR(data__->MEASUREDDISTANCE,) > __GET_VAR(data__->DESIREDDISTANCEFILL,))) {
       __SET_LOCATED(data__->,PUMP,,__BOOL_LITERAL(TRUE));

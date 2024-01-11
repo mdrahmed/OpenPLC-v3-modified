@@ -1,12 +1,12 @@
 Installing OpenPLC on Linux
-Hit:2 https://deb.nodesource.com/node_20.x nodistro InRelease
-Hit:3 http://us.archive.ubuntu.com/ubuntu bionic InRelease
-Hit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease
-Hit:5 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:2 https://dl.google.com/linux/chrome/deb stable InRelease
 Hit:1 https://apt.llvm.org/bionic llvm-toolchain-bionic-14 InRelease
+Hit:3 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Hit:4 https://deb.nodesource.com/node_20.x nodistro InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu bionic InRelease
 Hit:6 http://us.archive.ubuntu.com/ubuntu bionic-updates InRelease
-Hit:7 http://us.archive.ubuntu.com/ubuntu bionic-backports InRelease
-Hit:8 http://ppa.launchpad.net/bluetooth/bluez/ubuntu bionic InRelease
+Hit:7 http://ppa.launchpad.net/bluetooth/bluez/ubuntu bionic InRelease
+Hit:8 http://us.archive.ubuntu.com/ubuntu bionic-backports InRelease
 Hit:9 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic InRelease
 Hit:10 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu bionic InRelease
 Reading package lists...
@@ -29,24 +29,19 @@ sqlite3 is already the newest version (3.22.0-1ubuntu0.7).
 python3-venv is already the newest version (3.6.7-1~18.04).
 The following packages were automatically installed and are no longer required:
   command-not-found-data gcc-11-base:i386 gir1.2-gst-plugins-base-1.0
-  gir1.2-gstreamer-1.0 gir1.2-harfbuzz-0.0 gir1.2-rb-3.0 gir1.2-totem-1.0
-  gir1.2-totemplparser-1.0 gyp icu-devtools indicator-messages libasound2-dev
-  libcapnp-0.6.1 libdbus-1-dev libdmapsharing-3.0-2 libegl1-mesa-dev
-  libgles2-mesa-dev libglu1-mesa-dev libgpod-common libgpod4 libgraphite2-dev
-  libharfbuzz-gobject0 libhttp-parser2.7.1 libice-dev libicu-le-hb0 libiculx60
-  libjemalloc1 libjs-async libjs-inherits libjs-node-uuid libjs-sphinxdoc
-  libjs-underscore liblirc-client0 libmirclient-dev libmirclient9
-  libmircommon-dev libmircommon7 libmircookie-dev libmircookie2 libmircore-dev
-  libmircore1 libmirprotobuf3 libmsgpackc2 libnetplan0 libpanel-applet3
-  libpcre16-3 libpcre3-dev libpcre32-3 libpcrecpp0v5 libprotobuf-dev
-  libprotobuf-lite10 libsdl2-2.0-0 libsgutils2-2 libsm-dev libsndio-dev
-  libssl1.0-dev libtermkey1 libudev-dev libunibilium4 libuv1-dev libvterm0
-  libwayland-bin libwayland-dev libxatracker2 libxcursor-dev libxi-dev
-  libxinerama-dev libxkbcommon-dev libxnvctrl0 libxrandr-dev libxrender-dev
-  libxss-dev libxt-dev libxv-dev libxvmc1 libz3-4 libz3-dev neovim-runtime
-  nodejs-doc python-concurrent.futures python-greenlet python-msgpack
-  python-neovim python-pkg-resources python-six python-trollius
-  x11proto-randr-dev x11proto-scrnsaver-dev x11proto-xinerama-dev
+  gir1.2-gstreamer-1.0 gir1.2-rb-3.0 gir1.2-totem-1.0 gir1.2-totemplparser-1.0
+  gyp indicator-messages libasound2-dev libcapnp-0.6.1 libdmapsharing-3.0-2
+  libgles2-mesa-dev libglu1-mesa-dev libgpod-common libgpod4
+  libhttp-parser2.7.1 libjemalloc1 libjs-async libjs-inherits libjs-node-uuid
+  libjs-sphinxdoc libjs-underscore liblirc-client0 libmirclient-dev
+  libmirclient9 libmircommon-dev libmircommon7 libmircookie-dev libmircookie2
+  libmircore-dev libmircore1 libmirprotobuf3 libmsgpackc2 libnetplan0
+  libpanel-applet3 libprotobuf-dev libprotobuf-lite10 libsdl2-2.0-0
+  libsgutils2-2 libsndio-dev libssl1.0-dev libtermkey1 libudev-dev
+  libunibilium4 libuv1-dev libvterm0 libxatracker2 libxnvctrl0 libxss-dev
+  libxv-dev libxvmc1 neovim-runtime nodejs-doc python-concurrent.futures
+  python-greenlet python-msgpack python-neovim python-pkg-resources python-six
+  python-trollius x11proto-scrnsaver-dev
 Use 'sudo apt autoremove' to remove them.
 0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
 Requirement already satisfied: flask==2.1 in ./.venv/lib/python3.10/site-packages (2.1.0)
@@ -54,13 +49,13 @@ Requirement already satisfied: werkzeug==2.1 in ./.venv/lib/python3.10/site-pack
 Requirement already satisfied: flask-login==0.6.2 in ./.venv/lib/python3.10/site-packages (0.6.2)
 Requirement already satisfied: pyserial in ./.venv/lib/python3.10/site-packages (3.5)
 Requirement already satisfied: pymodbus==2.5.3 in ./.venv/lib/python3.10/site-packages (2.5.3)
+Requirement already satisfied: click>=8.0 in ./.venv/lib/python3.10/site-packages (from flask==2.1) (8.1.7)
 Requirement already satisfied: itsdangerous>=2.0 in ./.venv/lib/python3.10/site-packages (from flask==2.1) (2.1.2)
 Requirement already satisfied: Jinja2>=3.0 in ./.venv/lib/python3.10/site-packages (from flask==2.1) (3.1.2)
-Requirement already satisfied: click>=8.0 in ./.venv/lib/python3.10/site-packages (from flask==2.1) (8.1.7)
 Requirement already satisfied: six>=1.15.0 in ./.venv/lib/python3.10/site-packages (from pymodbus==2.5.3) (1.16.0)
 Requirement already satisfied: MarkupSafe>=2.0 in ./.venv/lib/python3.10/site-packages (from Jinja2>=3.0->flask==2.1) (2.1.3)
 
-[notice] A new release of pip is available: 23.0.1 -> 23.3.1
+[notice] A new release of pip is available: 23.0.1 -> 23.3.2
 [notice] To update, run: python3 -m pip install --upgrade pip
 [MATIEC COMPILER]
 checking for a BSD-compatible install... /usr/bin/install -c
@@ -205,7 +200,7 @@ make[1]: Leaving directory '/home/raihan/OpenPLC_v3/utils/matiec_src'
 creating swapfile...
 mkswap: /home/raihan/OpenPLC_v3/swapfile: insecure permissions 0644, 0600 suggested.
 Setting up swapspace version 1, size = 1024 MiB (1073737728 bytes)
-no label, UUID=485d6c54-13cc-4b4f-aabd-9405a375123c
+no label, UUID=d627f4f5-685a-4d49-bb26-4b38ae26ab24
 swapon: /home/raihan/OpenPLC_v3/swapfile: insecure permissions 0644, 0600 suggested.
 CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
   Compatibility with CMake < 3.5 will be removed from a future version of

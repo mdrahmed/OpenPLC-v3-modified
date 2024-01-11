@@ -56,8 +56,10 @@ IEC_BYTE *byte_input[BUFFER_SIZE];\r\n\
 IEC_BYTE *byte_output[BUFFER_SIZE];\r\n\
 \r\n\
 //Analog I/O\r\n\
-IEC_UINT *int_input[BUFFER_SIZE];\r\n\
-IEC_UINT *int_output[BUFFER_SIZE];\r\n\
+//IEC_UINT *int_input[BUFFER_SIZE];\r\n\
+IEC_INT *int_input[BUFFER_SIZE];\r\n\
+//IEC_UINT *int_output[BUFFER_SIZE];\r\n\
+IEC_INT *int_output[BUFFER_SIZE];\r\n\
 \r\n\
 //Memory\r\n\
 IEC_UINT *int_memory[BUFFER_SIZE];\r\n\
