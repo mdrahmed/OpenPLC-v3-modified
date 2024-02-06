@@ -1,10 +1,10 @@
 Installing OpenPLC on Linux
-Hit:2 https://dl.google.com/linux/chrome/deb stable InRelease
-Hit:1 https://apt.llvm.org/bionic llvm-toolchain-bionic-14 InRelease
+Hit:2 https://deb.nodesource.com/node_20.x nodistro InRelease
 Hit:3 http://security.ubuntu.com/ubuntu bionic-security InRelease
-Hit:4 https://deb.nodesource.com/node_20.x nodistro InRelease
-Hit:5 http://us.archive.ubuntu.com/ubuntu bionic InRelease
-Hit:6 http://us.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:1 https://apt.llvm.org/bionic llvm-toolchain-bionic-14 InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:6 https://dl.google.com/linux/chrome/deb stable InRelease
 Hit:7 http://ppa.launchpad.net/bluetooth/bluez/ubuntu bionic InRelease
 Hit:8 http://us.archive.ubuntu.com/ubuntu bionic-backports InRelease
 Hit:9 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic InRelease
@@ -51,11 +51,11 @@ Requirement already satisfied: pyserial in ./.venv/lib/python3.10/site-packages 
 Requirement already satisfied: pymodbus==2.5.3 in ./.venv/lib/python3.10/site-packages (2.5.3)
 Requirement already satisfied: click>=8.0 in ./.venv/lib/python3.10/site-packages (from flask==2.1) (8.1.7)
 Requirement already satisfied: itsdangerous>=2.0 in ./.venv/lib/python3.10/site-packages (from flask==2.1) (2.1.2)
-Requirement already satisfied: Jinja2>=3.0 in ./.venv/lib/python3.10/site-packages (from flask==2.1) (3.1.2)
+Requirement already satisfied: Jinja2>=3.0 in ./.venv/lib/python3.10/site-packages (from flask==2.1) (3.1.3)
 Requirement already satisfied: six>=1.15.0 in ./.venv/lib/python3.10/site-packages (from pymodbus==2.5.3) (1.16.0)
-Requirement already satisfied: MarkupSafe>=2.0 in ./.venv/lib/python3.10/site-packages (from Jinja2>=3.0->flask==2.1) (2.1.3)
+Requirement already satisfied: MarkupSafe>=2.0 in ./.venv/lib/python3.10/site-packages (from Jinja2>=3.0->flask==2.1) (2.1.5)
 
-[notice] A new release of pip is available: 23.0.1 -> 23.3.2
+[notice] A new release of pip is available: 23.0.1 -> 24.0
 [notice] To update, run: python3 -m pip install --upgrade pip
 [MATIEC COMPILER]
 checking for a BSD-compatible install... /usr/bin/install -c
@@ -171,7 +171,6 @@ Making all in stage1_2
 make[1]: Entering directory '/home/raihan/OpenPLC_v3/utils/matiec_src/stage1_2'
 make  all-am
 make[2]: Entering directory '/home/raihan/OpenPLC_v3/utils/matiec_src/stage1_2'
-make[2]: Nothing to be done for 'all-am'.
 make[2]: Leaving directory '/home/raihan/OpenPLC_v3/utils/matiec_src/stage1_2'
 make[1]: Leaving directory '/home/raihan/OpenPLC_v3/utils/matiec_src/stage1_2'
 Making all in stage3
@@ -198,10 +197,11 @@ make[1]: Leaving directory '/home/raihan/OpenPLC_v3/utils/matiec_src'
 [GLUE GENERATOR]
 [OPEN DNP3]
 creating swapfile...
-mkswap: /home/raihan/OpenPLC_v3/swapfile: insecure permissions 0644, 0600 suggested.
-Setting up swapspace version 1, size = 1024 MiB (1073737728 bytes)
-no label, UUID=d627f4f5-685a-4d49-bb26-4b38ae26ab24
+fallocate: fallocate failed: Text file busy
+dd: failed to open '/home/raihan/OpenPLC_v3/swapfile': Text file busy
+mkswap: error: /home/raihan/OpenPLC_v3/swapfile is mounted; will not make swapspace
 swapon: /home/raihan/OpenPLC_v3/swapfile: insecure permissions 0644, 0600 suggested.
+swapon: /home/raihan/OpenPLC_v3/swapfile: swapon failed: Device or resource busy
 CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
   Compatibility with CMake < 3.5 will be removed from a future version of
   CMake.
